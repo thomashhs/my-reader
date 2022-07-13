@@ -1,5 +1,6 @@
 package com.imooc.reader.service;
 
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.imooc.reader.entity.Test;
 import com.imooc.reader.mapper.TestMapper;
 import org.junit.runner.RunWith;
@@ -7,6 +8,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"classpath:applicationContext.xml"})
@@ -32,5 +34,15 @@ public class MyBatisPlusTest {
     @org.junit.Test
     public void testDelete(){
         testMapper.deleteById(5);
+    }
+
+    @org.junit.Test
+    public void testSelect(){
+        QueryWrapper<Test> queryWrapper=new QueryWrapper<>();
+        queryWrapper.gt("id",28);
+        List<Test> testList=testMapper.selectList(queryWrapper);
+        for(Test test:testList){
+            System.out.println(test);
+        }
     }
 }
