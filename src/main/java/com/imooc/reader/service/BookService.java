@@ -7,5 +7,7 @@ import com.imooc.reader.entity.Category;
 import java.util.List;
 
 public interface BookService {
-    public IPage<Book> paging(Integer page,Integer row);
+    public IPage<Book> paging(Long categoryId,String order,Integer page,Integer row);
+
+    public Book selectBookById(Long bookId);
 }

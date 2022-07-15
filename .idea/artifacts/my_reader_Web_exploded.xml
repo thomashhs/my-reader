@@ -6,6 +6,7 @@
       <element id="directory" name="WEB-INF">
         <element id="directory" name="classes">
           <element id="module-output" name="my-reader" />
+          <element id="module-output" name="reader" />
         </element>
         <element id="directory" name="lib">
           <element id="library" level="project" name="Maven: ch.qos.logback:logback-classic:1.2.3" />
@@ -39,8 +40,11 @@
           <element id="library" level="project" name="Maven: org.springframework:spring-tx:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-web:5.2.6.RELEASE" />
           <element id="library" level="project" name="Maven: org.springframework:spring-webmvc:5.2.6.RELEASE" />
+          <element id="library" level="project" name="Maven: com.github.penggle:kaptcha:2.3.2" />
+          <element id="library" level="project" name="Maven: com.jhlabs:filters:2.0.235-1" />
         </element>
       </element>
+      <element id="javaee-facet-resources" facet="reader/web/Web" />
     </root>
   </artifact>
 </component>
