@@ -127,6 +127,7 @@
 	//重新发送请求,刷新验证码
     function reloadVerifyCode(){
         //请在这里实现刷新验证码
+        $("#imgVerifyCode").attr("src","/verify_code?ts="+new Date().getTime());
     }
 	
 	//点击验证码图片刷新验证码

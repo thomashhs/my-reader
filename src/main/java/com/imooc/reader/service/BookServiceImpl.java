@@ -26,11 +26,14 @@ public class BookServiceImpl implements BookService{
         if(categoryId!=null && categoryId!=-1){
             queryWrapper.eq("category_id",categoryId);
         }
-        if(order.equals("quantity")){
-            queryWrapper.orderByDesc("evaluation_quantity");
-        }else if(order.equals("score")){
-            queryWrapper.orderByDesc("evaluation_score");
+        if(order!=null){
+            if(order.equals("quantity")){
+                queryWrapper.orderByDesc("evaluation_quantity");
+            }else if(order.equals("score")){
+                queryWrapper.orderByDesc("evaluation_score");
+            }
         }
+
         IPage<Book> pageObject=bookMapper.selectPage(p,queryWrapper);
         return pageObject;
     }
@@ -38,6 +41,18 @@ public class BookServiceImpl implements BookService{
     @Override
     public Book selectBookById(Long bookId) {
         Book book=bookMapper.selectById(bookId);
+        return book;
+    }
+
+    @Override
+    public Book createBook(Book book) {
+        bookMapper.insert(book);
+        return book;
+    }
+
+    @Override
+    public Book updateBook(Book book) {
+        bookMapper.updateById(book);
         return book;
     }
 

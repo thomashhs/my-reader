@@ -6,7 +6,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 
 import java.util.Date;
 
-@TableName("member")
+@TableName("`member`")
 public class Member {
     @TableId(type= IdType.AUTO)
     private Long memberId;

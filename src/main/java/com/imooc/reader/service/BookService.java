@@ -10,4 +10,8 @@ public interface BookService {
     public IPage<Book> paging(Long categoryId,String order,Integer page,Integer row);
 
     public Book selectBookById(Long bookId);
+
+    public Book createBook(Book book);
+
+    public Book updateBook(Book book);
 }
