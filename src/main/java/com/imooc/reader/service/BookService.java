@@ -14,4 +14,6 @@ public interface BookService {
     public Book createBook(Book book);
 
     public Book updateBook(Book book);
+
+    public void deleteBook(Long bookId);
 }

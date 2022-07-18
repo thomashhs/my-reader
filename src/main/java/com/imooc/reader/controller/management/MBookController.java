@@ -134,4 +134,23 @@ public class MBookController {
         }
         return result;
     }
+
+    @GetMapping ("/delete/{id}")
+    @ResponseBody
+    public Map deleteByBookId(@PathVariable("id") Long bookid){
+
+        Map result=new HashMap();
+        try{
+            bookService.deleteBook(bookid);
+            result.put("code", "0");
+            result.put("msg", "success");
+        }catch (BussinessException ex){
+            ex.printStackTrace();
+            result.put("code", ex.getCode());
+            result.put("msg", ex.getMsg());
+        }
+
+        return result;
+
+    }
 }
